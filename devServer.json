@@ -1,0 +1,10 @@
+{
+  "context": [
+    "/openapi"
+  ],
+  "agent": "http://127.0.0.1:21882", 
+  "target": "https://api.openai.com",
+  "pathRewrite": {
+    "^/openapi": ""
+  } 
+}

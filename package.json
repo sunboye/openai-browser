@@ -1,0 +1,63 @@
+{
+  "name": "openai_browers",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js --mode=development",
+    "start": "node --max_old_space_size=2096 node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --config build/webpack.dev.conf.js",
+    "product": "webpack --config build/webpack.prod.conf.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^6.8.1",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "openai-self": "^1.1.9",
+    "path-browserify": "^1.0.1",
+    "style-loader": "^3.3.3",
+    "url-loader": "^4.1.1",
+    "vue": "^2.6.14",
+    "vue-loader": "15",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.7.15"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {
+      "no-debugger": "off",
+      "no-console": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
