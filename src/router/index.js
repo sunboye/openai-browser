@@ -8,9 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    beforeEnter(to, from, next) {
-      next('/index')
-    }
+    redirect: '/index'
   },
   {
     path: '/index',

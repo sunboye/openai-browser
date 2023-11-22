@@ -40,7 +40,7 @@ module.exports = {
         disableHostCheck: false, // 防止频繁的websocket检查
         target: devServer.target,
         pathRewrite: devServer.pathRewrite,
-        agent: devServer.agent ? new httpsProxyAgent(devServer.agent) : {},
+        agent: devServer.agent && devServer.open ? new httpsProxyAgent(devServer.agent) : {},
         overlay: true,
         changeOrigin: true,
         secure: false
@@ -72,6 +72,7 @@ module.exports = {
       'process.env' : {
         NODE_ENV: '"development"',
         FORCE_DEPEND: false,
+        proxy: devServer.open, // 是否使用本地代理方式
         BASE_API: 'window.location.protocol + "//" + window.location.host + "/"'
       }
     }),
