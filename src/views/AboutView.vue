@@ -25,10 +25,10 @@ export default {
       this.$router.push('/')
     },
     getModels() {
-      window.$openAi.getModels().then(res => {
+      window.$openAI.getModels().then(res => {
         console.log(res)
         if (res.success) {
-          this.modelsList = res.data
+          this.modelsList = res.data || []
         } else {
           window.alert(res.msg || res.status)
         }

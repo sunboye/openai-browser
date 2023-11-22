@@ -10,7 +10,7 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import openAi from 'openai-self'
+import openAI from 'openai-self'
 import { decode } from 'js-base64';
 export default {
   name: 'HomeView',
@@ -21,13 +21,13 @@ export default {
     }
   },
   created() {
-    // github 直接提交明文 apikey 会导致当前apikey不可用，所以默认apikey为base64编码之后的字符串
+    // github 直接提交明文apikey, 会导致当前apikey不可用，所以默认apikey用base64编码之后的字符串
     this.apiKey = this.apiKey && this.apiKey.length === 68 ? decode(this.apiKey) : this.apiKey
   },
   methods: {
     getModels() {
       if (this.apiKey) {
-        window.$openAi = new openAi({
+        window.$openAI = this.$openAI = new openAI({
           apiKey: this.apiKey, // openai的api_Key：必填，可前往openai官网申请
           BASE_PATH: process.env.NODE_ENV === 'production' ? null : process.env.proxy ? '/openapi' : null
           // proxy: 'http://127.0.0.1:21882', // 代理服务器地址：非必填，科学上网时需要
